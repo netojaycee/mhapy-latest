@@ -1,0 +1,11 @@
+https://vue.envytheme.com/vumy/chat-bot
+home page
+contact
+pricing
+blog all
+blog details
+add blog
+edit blog
+view blog
+privacy 
+terms

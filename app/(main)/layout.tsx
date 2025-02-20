@@ -7,9 +7,9 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className='max-w-8xl mx-auto space-y-5 md:space-y-10'>
+    <div className='max-w-7xl mx-auto flex flex-col min-h-screen'>
       <Header />
-      {children}
+      <main className='flex-grow'>{children}</main>
       <Footer />
     </div>
   );

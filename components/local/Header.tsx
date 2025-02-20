@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { ChevronRight, Menu } from "lucide-react";
+import { Menu, Search } from "lucide-react";
 
 export default function Header() {
   const nav = [
@@ -10,9 +10,10 @@ export default function Header() {
     { name: "Blog", href: "/blog" },
     { name: "Pricing", href: "/pricing" },
     { name: "Contact", href: "/contact" },
+    // { name: "Search Therapists", href: "/search-therapists" },
   ];
   return (
-    <header className='px-2 md:px-10 shadow-md md:shadow-none bg-white'>
+    <header className='sticky top-0 z-50 w-full px-2 md:px-10 shadow-md md:shadow-none bg-white'>
       <div className='flex items-center justify-between py-4'>
         <div className=''>
           <Image
@@ -37,9 +38,11 @@ export default function Header() {
               </li>
             ))}
 
-            <Button className="h-10 md:h-12">
-              Get Started <ChevronRight className='' />
-            </Button>
+            <Link href={"/search-therapists"}>
+              <Button className='h-10 md:h-12'>
+                <Search className='' /> Search Therapists
+              </Button>
+            </Link>
             <Menu className='md:hidden w-10 h-10' />
           </ul>
         </nav>

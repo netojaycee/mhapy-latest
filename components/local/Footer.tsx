@@ -5,13 +5,13 @@ import { FacebookIcon, Instagram } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className='bg-gray-50 text-gray-800'>
+    <footer className='bg-primary text-white'>
       {/* Top Section */}
       <div className='grid grid-cols-1 md:grid-cols-3 gap-8 px-5 md:px-20 py-10'>
         {/* About Section */}
         <div className='space-y-5'>
-          <h1 className='text-3xl font-bold text-primary'>mhapy</h1>
-          <p className='text-gray-600 leading-relaxed'>
+          <h1 className='text-3xl font-bold'>mhapy</h1>
+          <p className=' leading-relaxed'>
             mhapy is a mental health accountability platform that helps you
             track your mental health progress and connect with mental health
             professionals.
@@ -20,13 +20,13 @@ export default function Footer() {
 
         {/* Quick Links */}
         <div className='space-y-5'>
-          <h1 className='text-xl font-semibold text-primary'>Quick Links</h1>
+          <h1 className='text-xl font-semibold'>Quick Links</h1>
           <ul className='space-y-2'>
             {["Home", "Blog", "Pricing", "Contact"].map((link, idx) => (
               <li key={idx}>
                 <a
                   href={`/${link === "Home" ? "" : link.toLowerCase()}`}
-                  className='text-gray-600 hover:text-primary transition duration-300'
+                  className=' hover:text-[#b282f4] transition duration-300'
                 >
                   {link}
                 </a>
@@ -37,12 +37,12 @@ export default function Footer() {
 
         {/* Contact Info */}
         <div className='space-y-5'>
-          <h1 className='text-xl font-semibold text-primary'>Contact</h1>
-          <p className='text-gray-600'>
+          <h1 className='text-xl font-semibold'>Contact</h1>
+          <p className=''>
             1234, 5th Avenue, New York, NY 10001, United States
           </p>
-          <p className='text-gray-600'>Email: support@mhapy.com</p>
-          <p className='text-gray-600'>Phone: +1 (555) 123-4567</p>
+          <p className=''>Email: support@mhapy.com</p>
+          <p className=''>Phone: +1 (555) 123-4567</p>
         </div>
       </div>
 
@@ -51,7 +51,7 @@ export default function Footer() {
       {/* Bottom Section */}
       <div className='flex flex-col md:flex-row items-center justify-between px-5 md:px-20 py-5'>
         {/* Footer Branding */}
-        <p className='text-sm text-gray-600'>
+        <p className='text-sm '>
           &copy; 2025 mhapy. All Rights Reserved.
         </p>
         <Image

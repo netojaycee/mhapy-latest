@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import React from "react";
 
 import {
@@ -44,20 +43,22 @@ const faqData = [
 
 export default function Faq() {
   return (
-    <div className=' px-2 md:px-10 w-full space-y-5 '>
-      <h1 className='text-[18px] font-bold text-center text-primary'>
-        Frequently Asked Questions
-      </h1>
-      <h1 className='text-2xl md:text-4xl lg:text-5xl font-nunito font-bold text-center w-full md:w-[70%] lg:w-[55%] mx-auto'>
+    <div className='relative w-full py-16 px-4 md:px-8 text-center '>
+      <div className='relative max-w-4xl mx-auto'>
+        <h2 className='text-3xl md:text-4xl font-bold text-[#5A1DAD]'>
+          Frequently Asked Questions
+        </h2>
+      </div>
+      {/* <h1 className='text-2xl md:text-4xl lg:text-5xl font-nunito font-bold text-center w-full md:w-[70%] lg:w-[55%] mx-auto'>
         Dedicated to help anything people&apos;s needs{" "}
-      </h1>
+      </h1> */}
 
-      <div className='px-2 md:px-10 w-full flex md:flex-row flex-col space-y-5 md:space-y-10 lg:space-x-10 lg:space-y-0 mt-10 md:mt-0'>
-        <div className='w-full md:w-[50%] flex flex-col space-y-3'>
+      <div className='mt-10 px-2 md:px-10 w-full flex md:flex-row flex-col space-y-5 md:space-y-10 lg:space-x-10 lg:space-y-0'>
+        <div className='w-full flex flex-col space-y-3'>
           <FaqAccordion />
         </div>
 
-        <div className='w-full md:w-[50%] flex flex-col items-center justify-center space-y-5 md:space-y-10'>
+        {/* <div className='w-full md:w-[50%] flex flex-col items-center justify-center space-y-5 md:space-y-10'>
           <div className='relative w-full h-[500px]'>
             <Image
               src='/images/human-faq.png'
@@ -66,7 +67,7 @@ export default function Faq() {
               layout='fill'
             />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
@@ -74,14 +75,20 @@ export default function Faq() {
 
 function FaqAccordion() {
   return (
-    <Accordion type='single' collapsible className='w-full space-y-5'>
+    <Accordion
+      type='single'
+      collapsible
+      className='w-full grid grid-cols-1 md:grid-cols-2 gap-5'
+    >
       {faqData.map((faq, index) => (
         <AccordionItem
-          className='bg-white rounded-[12px] shadow-md p-5'
+          className='bg-white rounded-[12px] shadow-md p-2'
           key={index}
           value={`item-${index}`}
         >
-          <AccordionTrigger className="font-nunito font-semibold text-[20px]">{faq.question}</AccordionTrigger>
+          <AccordionTrigger className='font-nunito font-semibold text-[15px]'>
+            {faq.question}
+          </AccordionTrigger>
           <AccordionContent>{faq.answer}</AccordionContent>
         </AccordionItem>
       ))}

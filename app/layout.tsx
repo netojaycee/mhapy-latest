@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import ReduxProvider from "@/lib/ReduxProvider";
+import { Toaster } from "@/components/ui/sonner";
+
 
 export const metadata: Metadata = {
   title: "mhapy - mental health chatbot",
@@ -14,7 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`antialiased bg-[#fafbff]`}>{children}</body>
+      <body className={`antialiased bg-[#fafbff]`}>
+        <ReduxProvider>{children}</ReduxProvider>{" "}
+        <Toaster richColors closeButton />
+      </body>
     </html>
   );
 }

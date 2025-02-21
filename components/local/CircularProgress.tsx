@@ -21,15 +21,16 @@ export default function CircularProgress({ value }: { value: number }) {
           cy='50%'
           r={radius}
           strokeWidth='8'
-          stroke='blue'
+          stroke='#441890' /* Brand color */
           fill='none'
           strokeDasharray={circumference}
           strokeDashoffset={offset}
           strokeLinecap='round'
+          className='transition-all duration-300'
         />
       </svg>
       {/* Number in the Middle */}
-      <div className='absolute inset-0 flex items-center justify-center text-lg font-bold text-blue-600'>
+      <div className='absolute inset-0 flex items-center justify-center text-lg font-bold text-[#441890]'>
         {value}%
       </div>
     </div>

@@ -1,3 +1,4 @@
+"use client"
 import { Separator } from "@/components/ui/separator";
 import Features from "./(components)/Features";
 import Hero from "./(components)/Hero";
@@ -11,11 +12,14 @@ import TherapyRecommendations from "./(components)/TherapyRecommendation";
 import WhyChooseMhapy from "./(components)/WhyChooseMhapy";
 import TherapistsMatchingSteps from "./(components)/TherapistsMatchingSteps";
 import TestimonialSlider from "./(components)/TestimonialSlider";
+import { useRef } from "react";
 
 export default function Home() {
+     const downloadSectionRef = useRef<HTMLDivElement | null>(null);
+
   return (
     <div className='flex flex-col'>
-      <Hero />
+      <Hero downloadSectionRef={downloadSectionRef} />
       <Features />
       <TherapyRecommendations />
       <WhyChooseMhapy />
@@ -29,7 +33,7 @@ export default function Home() {
       {/* <div className='w-full flex justify-center'>
         <Button className=' text-[20px]'>Earn Free Therapy</Button>
       </div> */}
-      <App />
+      <App downloadSectionRef={downloadSectionRef} />
     </div>
   );
 }

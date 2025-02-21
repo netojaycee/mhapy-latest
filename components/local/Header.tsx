@@ -2,7 +2,8 @@ import Link from "next/link";
 import React from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { Menu, Search } from "lucide-react";
+import { Search } from "lucide-react";
+import { MobileSidebar } from "./MobileSidebar";
 
 export default function Header() {
   const nav = [
@@ -43,7 +44,8 @@ export default function Header() {
                 <Search className='' /> Search Therapists
               </Button>
             </Link>
-            <Menu className='md:hidden w-10 h-10' />
+
+            <MobileSidebar  />
           </ul>
         </nav>
       </div>

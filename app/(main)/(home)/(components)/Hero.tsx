@@ -2,10 +2,15 @@
 import { Button } from "@/components/ui/button";
 import { ChevronRight, Download } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 // import { motion } from "framer-motion";
 
-export default function Hero() {
+export default function Hero({ downloadSectionRef }: { downloadSectionRef: React.RefObject<HTMLDivElement | null> }) {
+
+   const scrollToDownloadSection = () => {
+     downloadSectionRef.current?.scrollIntoView({ behavior: "smooth" });
+   };
   return (
     // <div className='px-2 md:px-10 w-full flex items-center lg:flex-row flex-col space-y-5 md:space-y-10 lg:space-x-10 lg:space-y-0 mt-10 md:mt-0'>
     //   <motion.div
@@ -64,7 +69,7 @@ export default function Hero() {
     //   </motion.div>
     // </div>
 
-    <div className='relative w-full md:h-[90vh] flex items-center justify-center'>
+    <div className='relative w-full md:h-[90vh] h-[30vh] flex items-center justify-center'>
       <div className='relative h-full w-full'>
         <video
           className='absolute top-0 left-0 w-full h-full object-cover'
@@ -72,7 +77,7 @@ export default function Hero() {
           loop
           muted
           playsInline
-          poster='/images/hero-fallback.jpg' // Fallback image
+          poster='/images/hero.jpg' // Fallback image
         >
           <source src='/videos/hero-video.webm' type='video/webm' />
           <source src='/videos/vid.mp4' type='video/mp4' />
@@ -96,10 +101,17 @@ export default function Hero() {
           and connect for a healthier, happier you.{" "}
         </p>
         <div className='flex items-center gap-5'>
-          <Button className='mt-5' size={"sm"}>
-            Book a Therapist <ChevronRight className='w-5 h-5' />{" "}
-          </Button>
-          <Button variant={"outline"} className='mt-5' size={"sm"}>
+          <Link href='/search-therapists'>
+            <Button className='mt-5' size={"sm"}>
+              Book a Therapist <ChevronRight className='w-5 h-5' />{" "}
+            </Button>
+          </Link>
+          <Button
+            onClick={scrollToDownloadSection}
+            variant={"outline"}
+            className='mt-5'
+            size={"sm"}
+          >
             Download App <Download className='w-5 h-5' />{" "}
           </Button>
         </div>

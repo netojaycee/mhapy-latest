@@ -41,7 +41,7 @@ export default function Footer() {
           <p className=''>
             1234, 5th Avenue, New York, NY 10001, United States
           </p>
-          <p className=''>Email: support@mhapy.com</p>
+          <p className=''>Email: projectmhapy@gmail.com</p>
           <p className=''>Phone: +1 (555) 123-4567</p>
         </div>
       </div>

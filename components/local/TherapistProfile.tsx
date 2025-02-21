@@ -22,7 +22,7 @@ export default function TherapistProfile({ name, image, bio }: { name: string; i
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className='max-w-3xl mx-auto p-6 bg-white shadow-lg rounded-2xl overflow-hidden'
+      className='w-full overflow-hidden'
     >
       <div className='flex flex-col md:flex-row items-start'>
         {/* Animated Profile Image */}

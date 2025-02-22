@@ -3,10 +3,10 @@ name: 🚀 Deploy Next.js App with PNPM to Server
 on:
   push:
     branches:
-      - master   # Runs on direct push to master
+      - master  # Runs only when changes are pushed to master
   pull_request:
     branches:
-      - master 
+      - master  # Runs only on PRs targeting master
 
 jobs:
   deploy:
@@ -14,32 +14,43 @@ jobs:
 
     steps:
     - name: 📂 Checkout Repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: 🔑 Setup SSH Key
       run: |
         mkdir -p ~/.ssh
-        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan -H github.com >> ~/.ssh/known_hosts
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
 
     - name: 🚀 Deploy via SSH
       run: |
         ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }} << 'EOF'
+          # Load environment variables and paths
+          export NVM_DIR=$HOME/.nvm
+          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+          source ~/.bashrc
+          source ~/.profile
+
           cd /var/www/html/mhapy
+
+          # Ensure we are on the correct branch (master only)
           git fetch
-          git checkout main || git checkout master  # Adjust for your repo
-          git pull origin main
+          git checkout master
+          git pull origin master
 
-          # Install pnpm and pm2 if missing
+          # Ensure pnpm and pm2 are installed & sourced properly
+          export PNPM_HOME="$HOME/.local/share/pnpm"
+          export PATH="$PNPM_HOME:$PATH"
+          source ~/.bashrc
+
           command -v pnpm >/dev/null 2>&1 || curl -fsSL https://get.pnpm.io/install.sh | sh -
-          command -v pm2 >/dev/null 2>&1 || npm install -g pm2
+          command -v pm2 >/dev/null 2>&1 || pnpm add -g pm2
 
-          # Install dependencies and restart app
+          # Install dependencies, build, and restart app
           pnpm install --frozen-lockfile
           pnpm build
+
           pm2 restart mhapy || pm2 start pnpm --name "mhapy" -- start --port 2000
         EOF
       env:

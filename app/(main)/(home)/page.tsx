@@ -13,13 +13,15 @@ import WhyChooseMhapy from "./(components)/WhyChooseMhapy";
 import TherapistsMatchingSteps from "./(components)/TherapistsMatchingSteps";
 import TestimonialSlider from "./(components)/TestimonialSlider";
 import { useRef } from "react";
+import EarnFreeTherapySection from "./(components)/EarnFreeTherapySection";
 
 export default function Home() {
      const downloadSectionRef = useRef<HTMLDivElement | null>(null);
 
   return (
     <div className='flex flex-col '>
-      <Hero downloadSectionRef={downloadSectionRef} />
+      <Hero />
+      <EarnFreeTherapySection downloadSectionRef={downloadSectionRef} />
       <Features />
       <TherapyRecommendations />
       <WhyChooseMhapy />

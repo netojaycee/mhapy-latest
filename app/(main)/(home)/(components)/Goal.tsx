@@ -54,7 +54,7 @@ export default function Goal() {
     //   </div>
     // </div>
 
-    <div className='px-2 md:px-10 w-full flex items-center md:flex-row flex-col space-y-5 md:space-y-10 lg:space-x-10 lg:space-y-0 mt-10 md:mt-0'>
+    <div className='max-w-5xl px-3 md:px-0 mx-auto w-full flex items-center md:flex-row flex-col space-y-5 md:space-y-10 lg:space-x-10 lg:space-y-0 mt-10 md:mt-0'>
       {/* Left Image Section */}
       <motion.div
         className='w-full md:w-[50%] flex flex-col items-center justify-center space-y-5 md:space-y-10'

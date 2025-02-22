@@ -43,8 +43,8 @@ const faqData = [
 
 export default function Faq() {
   return (
-    <div className='relative w-full py-16 px-4 md:px-8 text-center '>
-      <div className='relative max-w-4xl mx-auto'>
+    <div className='relative w-full py-16 text-center max-w-5xl mx-auto'>
+      <div className='relative max-w-4xl mx-auto px-3 md:px-0'>
         <h2 className='text-3xl md:text-4xl font-bold text-[#5A1DAD]'>
           Frequently Asked Questions
         </h2>
@@ -53,7 +53,7 @@ export default function Faq() {
         Dedicated to help anything people&apos;s needs{" "}
       </h1> */}
 
-      <div className='mt-10 px-2 md:px-10 w-full flex md:flex-row flex-col space-y-5 md:space-y-10 lg:space-x-10 lg:space-y-0'>
+      <div className='mt-10 w-full flex md:flex-row flex-col space-y-5 md:space-y-10 lg:space-x-10 lg:space-y-0'>
         <div className='w-full flex flex-col space-y-3'>
           <FaqAccordion />
         </div>

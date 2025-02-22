@@ -76,7 +76,7 @@ export default function Features() {
     //   </p>
     // </div>
 
-    <div className='w-full py-12 md:py-16 lg:py-20 px-4 md:px-8 text-center'>
+    <div className='max-w-5xl  px-3 md:px-0 mx-auto w-full py-12 md:py-16 lg:py-20 text-center'>
       <div className='max-w-4xl mx-auto'>
         <motion.h1
           className='text-3xl md:text-4xl font-bold text-[#5A1DAD]'
@@ -110,7 +110,9 @@ export default function Features() {
           <span className='bg-[#FFC107]/10 p-3 rounded-[12px] group-hover:bg-[#FFC107] flex items-center justify-center h-[80px] w-[80px]'>
             <Brain className='w-10 h-10 text-[#FFC107] group-hover:text-white' />
           </span>
-          <h1 className='text-left text-xl font-bold font-nunito'>Human Interaction</h1>
+          <h1 className='text-left text-xl font-bold font-nunito'>
+            Human Interaction
+          </h1>
           <p className='text-left text-[14px]'>
             We believe in real, human connections that prioritize understanding,
             empathy, and emotional support.

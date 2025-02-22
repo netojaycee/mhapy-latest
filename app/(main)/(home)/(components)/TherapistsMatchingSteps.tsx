@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 export default function TherapistMatchingSteps() {
   return (
-    <section className='w-full py-16 px-4 md:px-8 text-center'>
+    <section className='w-full py-16 max-w-5xl mx-auto text-center px-3 md:px-0'>
       <div className='max-w-3xl mx-auto'>
         <h2 className='text-3xl md:text-4xl font-bold text-[#5A1DAD]'>
           Find Your Perfect Therapist in 3 Simple Steps

@@ -6,7 +6,8 @@ import { motion } from "framer-motion";
 
 export default function TherapyRecommendations() {
   return (
-    <section className='w-full py-12 md:py-16 lg:py-20 px-4 md:px-8 text-center bg-[#F6F4FC]'>
+    <section className='w-full py-12 md:py-16 lg:py-20  text-center bg-[#F6F4FC]'>
+      <div className="max-w-5xl mx-auto px-3 md:px-0">
       <div className='max-w-4xl mx-auto'>
         <motion.h1
           className='text-3xl md:text-4xl font-bold text-[#5A1DAD]'
@@ -96,6 +97,6 @@ export default function TherapyRecommendations() {
           </div>
         </div>
       </div>
-    </section>
+    </div></section>
   );
 }

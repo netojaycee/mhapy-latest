@@ -18,7 +18,7 @@ export default function Home() {
      const downloadSectionRef = useRef<HTMLDivElement | null>(null);
 
   return (
-    <div className='flex flex-col'>
+    <div className='flex flex-col '>
       <Hero downloadSectionRef={downloadSectionRef} />
       <Features />
       <TherapyRecommendations />

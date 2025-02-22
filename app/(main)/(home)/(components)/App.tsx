@@ -39,7 +39,7 @@ export default function App({
               </Button>{" "}
             </a>
             <a
-              href='https://apps.apple.com/kw/app/mhapy-ai-therapy-assistant/id6450757194'
+              href='https://apps.apple.com/ca/app/mhapy-ai-therapy-assistant/id6450757194'
               target='_blank'
             >
               <Button className='bg-white text-primary hover:bg-gray-800 hover:text-white  mt-5 transform transition-transform duration-300 hover:-translate-y-2'>
@@ -55,7 +55,6 @@ export default function App({
             </a>
           </div>
         </div>
-
         <div className='w-full md:w-[50%] flex flex-col items-center justify-center space-y-5 md:space-y-10'>
           <Image
             src='/images/mockup.png'

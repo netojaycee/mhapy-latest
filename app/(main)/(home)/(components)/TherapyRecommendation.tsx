@@ -38,7 +38,7 @@ export default function TherapyRecommendations() {
         <div className='overflow-hidden'>
           <div className='p-4 md:p-6'>
             <Image
-              src='/images/matching-algorithm.jpg'
+              src='/images/algorithm.jpg'
               alt='Advanced Matching Algorithm'
               width={500}
               height={300}
@@ -63,7 +63,7 @@ export default function TherapyRecommendations() {
               alt='Customized Therapy Goals'
               width={500}
               height={300}
-              className='rounded-lg mb-4 w-full h-40 bg-gray-400 object-cover'
+              className='rounded-lg mb-4 w-full h-40 bg-gray-400 object-cover object-top'
             />
             <h3 className='text-left  text-lg font-semibold text-[#5A1DAD]'>
               Customized Therapy Goals
@@ -84,7 +84,7 @@ export default function TherapyRecommendations() {
               alt='Trusted User Reviews'
               width={500}
               height={300}
-              className='rounded-lg mb-4 w-full h-40 bg-gray-400 object-cover'
+              className='rounded-lg mb-4 w-full h-40 bg-gray-400 object-cover object-top'
             />
             <h3 className='text-left  text-lg font-semibold text-[#5A1DAD]'>
               Trusted User Reviews

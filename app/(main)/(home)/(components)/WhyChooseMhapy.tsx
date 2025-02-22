@@ -24,83 +24,89 @@ export default function WhyChooseMhapy() {
         <div className='relative grid md:grid-cols-3 gap-6 mt-10 max-w-6xl mx-auto'>
           {/* Card 1 - AI Matching */}
           <Card className='bg-white text-black shadow-lg rounded-lg overflow-hidden'>
-            <CardContent className='p-4 md:p-6 text-center'>
+            <CardContent className='p-0 text-center'>
               <Image
                 src='/images/ai-matching.jpg'
                 alt='Smart AI Matching'
                 width={500}
                 height={300}
-                className='rounded-lg mb-4 w-full h-40 object-cover'
+                className='rounded-lg mb-2 w-full h-[180px] object-cover'
               />
-              <h3 className='text-lg font-semibold text-[#5A1DAD]'>
-                Smart AI Matching
-              </h3>
-              <p className='text-sm text-gray-600 mt-2'>
-                Our advanced AI analyzes your responses and pairs you with the
-                best therapist for your unique needs.
-              </p>
-              <Button
-                variant='outline'
-                className='mt-4 text-[#5A1DAD] border-[#5A1DAD]'
-              >
-                Learn More
-              </Button>
+              <div className='p-4 md:p-6'>
+                <h3 className='text-lg font-semibold text-[#5A1DAD]'>
+                  Smart AI Matching
+                </h3>
+                <p className='text-sm text-gray-600 mt-2'>
+                  Our advanced AI analyzes your responses and pairs you with the
+                  best therapist for your unique needs.
+                </p>
+                <Button
+                  variant='outline'
+                  className='mt-4 text-[#5A1DAD] border-[#5A1DAD]'
+                >
+                  Learn More
+                </Button>
+              </div>
             </CardContent>
           </Card>
 
           {/* Card 2 - Verified Therapists */}
           <Card className='bg-white text-black shadow-lg rounded-lg overflow-hidden'>
-            <CardContent className='p-4 md:p-6 text-center'>
+            <CardContent className='p-0 text-center'>
               <Image
                 src='/images/verified-therapists.jpg'
                 alt='Diverse & Verified Therapists'
                 width={500}
                 height={300}
-                className='rounded-lg mb-4 w-full h-40 object-cover'
+                className='rounded-lg mb-2 w-full h-[180px] object-cover object-top'
               />
-              <h3 className='text-lg font-semibold text-[#5A1DAD]'>
-                Diverse & Verified Therapists
-              </h3>
-              <p className='text-sm text-gray-600 mt-2'>
-                Get access to a wide range of licensed professionals with
-                various specializations.
-              </p>
-              <Button
-                variant='outline'
-                className='mt-4 text-[#5A1DAD] border-[#5A1DAD]'
-              >
-                Meet Experts
-              </Button>
+              <div className='p-4 md:p-6'>
+                <h3 className='text-lg font-semibold text-[#5A1DAD]'>
+                  Diverse & Verified Therapists
+                </h3>
+                <p className='text-sm text-gray-600 mt-2'>
+                  Get access to a wide range of licensed professionals with
+                  various specializations.
+                </p>
+                <Button
+                  variant='outline'
+                  className='mt-4 text-[#5A1DAD] border-[#5A1DAD]'
+                >
+                  Meet Experts
+                </Button>
+              </div>
             </CardContent>
           </Card>
 
           {/* Card 3 - Privacy & Security */}
           <Card className='bg-white text-black shadow-lg rounded-lg overflow-hidden'>
-            <CardContent className='p-4 md:p-6 text-center'>
+            <CardContent className='p-0 text-center'>
               <Image
                 src='/images/secure-privacy.jpg'
                 alt='Confidential & Secure'
                 width={500}
                 height={300}
-                className='rounded-lg mb-4 w-full h-40 object-cover'
+                className='rounded-lg mb-2 w-full h-[180px] object-cover'
               />
-              <h3 className='text-lg font-semibold text-[#5A1DAD]'>
-                Confidential & Secure
-              </h3>
-              <p className='text-sm text-gray-600 mt-2'>
-                Your personal data and therapy sessions are protected with the
-                highest privacy standards.
-              </p>
-              <Button
-                variant='outline'
-                className='mt-4 text-[#5A1DAD] border-[#5A1DAD]'
-              >
-                Learn More
-              </Button>
+              <div className='p-4 md:p-6'>
+                <h3 className='text-lg font-semibold text-[#5A1DAD]'>
+                  Confidential & Secure
+                </h3>
+                <p className='text-sm text-gray-600 mt-2 h-8'>
+                  Your personal data and therapy sessions are protected with the
+                  highest privacy standards.
+                </p>
+                <Button
+                  variant='outline'
+                  className='mt-4 text-[#5A1DAD] border-[#5A1DAD]'
+                >
+                  Learn More
+                </Button>
+              </div>
             </CardContent>
           </Card>
         </div>
-      </div>{" "}
+      </div>
     </section>
   );
 }

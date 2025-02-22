@@ -101,7 +101,7 @@ export default function Features() {
       <div className='grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-10 lg:gap-20 mt-10'>
         {/* Value 1 */}
         <motion.div
-          className='flex flex-col space-y-5 group transform transition-transform duration-300 hover:-translate-y-2 items-start'
+          className='flex flex-col space-y-5 group transform transition-transform duration-300 hover:-translate-y-2 items-center'
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
@@ -121,7 +121,7 @@ export default function Features() {
 
         {/* Value 2 */}
         <motion.div
-          className='flex flex-col space-y-5 group transform transition-transform duration-300 hover:-translate-y-2'
+          className='flex flex-col space-y-5 group transform transition-transform duration-300 hover:-translate-y-2 items-center'
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
@@ -139,7 +139,7 @@ export default function Features() {
 
         {/* Value 3 */}
         <motion.div
-          className='flex flex-col space-y-5 group transform transition-transform duration-300 hover:-translate-y-2'
+          className='flex flex-col space-y-5 group transform transition-transform duration-300 hover:-translate-y-2 items-center'
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.6 }}

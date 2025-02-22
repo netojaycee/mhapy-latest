@@ -16,7 +16,7 @@ export default function Header() {
   return (
     <header className='sticky top-0 z-50 w-full px-2 md:px-10 shadow-md md:shadow-none bg-white'>
       <div className='flex items-center justify-between py-4'>
-        <div className=''>
+        <Link href='/' className=''>
           <Image
             className=''
             src={"/images/logo.png"}
@@ -25,7 +25,7 @@ export default function Header() {
             alt='logo'
             quality={100}
           />
-        </div>{" "}
+        </Link>{" "}
         <nav>
           <ul className='md:space-x-10 space-x-5 items-center flex'>
             {nav.map((item) => (
@@ -45,7 +45,7 @@ export default function Header() {
               </Button>
             </Link>
 
-            <MobileSidebar  />
+            <MobileSidebar />
           </ul>
         </nav>
       </div>

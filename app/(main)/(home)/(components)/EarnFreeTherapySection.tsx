@@ -45,7 +45,7 @@ export default function EarnFreeTherapySection({
         transition={{ duration: 0.5 }}
       >
         <Image
-          src='/images/happy-user.jpg'
+          src='/images/happy.jpg'
           alt='Happy user'
           width={400}
           height={300}

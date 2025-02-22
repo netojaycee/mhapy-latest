@@ -29,7 +29,15 @@ jobs:
       run: |
         ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }} << 'EOF'
           cd /var/www/html/mhapy
+          git fetch
+          git checkout main || git checkout master  # Adjust for your repo
           git pull origin main
+
+          # Install pnpm and pm2 if missing
+          command -v pnpm >/dev/null 2>&1 || curl -fsSL https://get.pnpm.io/install.sh | sh -
+          command -v pm2 >/dev/null 2>&1 || npm install -g pm2
+
+          # Install dependencies and restart app
           pnpm install --frozen-lockfile
           pnpm build
           pm2 restart mhapy || pm2 start pnpm --name "mhapy" -- start --port 2000

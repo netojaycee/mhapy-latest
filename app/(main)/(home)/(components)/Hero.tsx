@@ -6,11 +6,14 @@ import Link from "next/link";
 import React from "react";
 // import { motion } from "framer-motion";
 
-export default function Hero({ downloadSectionRef }: { downloadSectionRef: React.RefObject<HTMLDivElement | null> }) {
-
-   const scrollToDownloadSection = () => {
-     downloadSectionRef.current?.scrollIntoView({ behavior: "smooth" });
-   };
+export default function Hero({
+  downloadSectionRef,
+}: {
+  downloadSectionRef: React.RefObject<HTMLDivElement | null>;
+}) {
+  const scrollToDownloadSection = () => {
+    downloadSectionRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     // <div className='px-2 md:px-10 w-full flex items-center lg:flex-row flex-col space-y-5 md:space-y-10 lg:space-x-10 lg:space-y-0 mt-10 md:mt-0'>
     //   <motion.div
@@ -92,9 +95,9 @@ export default function Hero({ downloadSectionRef }: { downloadSectionRef: React
         </video>
         <div className='absolute inset-0 bg-primary opacity-40'></div>
       </div>
-      <div className='max-w-lg mx-auto absolute inset-0 flex flex-col items-center justify-center text-center  px-4 md:px-8'>
+      <div className='max-w-xl mx-auto absolute inset-0 flex flex-col items-center justify-center text-center  px-4 md:px-8'>
         <h1 className='text-2xl md:text-4xl font-bold text-white leading-tight'>
-          Your Digital Companion for Mental Wellness{" "}
+          Effortless, Personalized Therapy Recommendations Just for You{" "}
         </h1>
         <p className='text-sm text-white mt-2 opacity-80'>
           Meet Mhapy – your AI-powered mental health companion. Track, assess,

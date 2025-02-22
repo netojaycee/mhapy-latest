@@ -10,7 +10,7 @@ export default function App({
   return (
     <div
       ref={downloadSectionRef}
-      className='bg-[#F6F4FC] py-16 px-2 md:pr-10 md:pl-16 w-full flex items-center md:flex-row flex-col space-y-5 md:space-y-10 lg:space-x-10 lg:space-y-0 mt-10 md:mt-0'
+      className='bg-[#F6F4FC] py-16 px-2 md:px-16 w-full flex items-center md:flex-row flex-col space-y-5 md:space-y-10 lg:space-x-10 lg:space-y-0 mt-10 md:mt-0'
     >
       <div className='w-full md:w-[50%] flex flex-col  space-y-3 '>
         <h1 className='text-2xl md:text-3xl lg:text-4xl font-bold font-nunito'>
@@ -20,7 +20,7 @@ export default function App({
           Let&apos;s get your free copy from Apple and Play store{" "}
         </h1>
 
-        <div className='flex space-x-5 items-start justify-start w-full '>
+        <div className='flex space-x-5 md:flex-row flex-col items-start justify-start w-full '>
           <a
             target='_blank'
             href='https://play.google.com/store/apps/details?id=com.mobile.mhapy&pli=1'

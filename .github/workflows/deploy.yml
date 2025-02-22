@@ -3,7 +3,10 @@ name: 🚀 Deploy Next.js App with PNPM to Server
 on:
   push:
     branches:
-      - master  # Change if using a different branch
+      - master   # Runs on direct push to master
+  pull_request:
+    branches:
+      - master 
 
 jobs:
   deploy:

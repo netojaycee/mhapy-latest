@@ -32,11 +32,11 @@ export default function TherapistMatchingSteps() {
           </div>
           <div className='w-full md:w-1/2 flex '>
             <Image
-              src='/images/step-1.jpg'
+              src='/images/about-self.jpg'
               alt='Tell us about yourself'
               width={350}
               height={250}
-              className='rounded-lg object-cover bg-gray-400'
+              className='rounded-lg object-cover bg-gray-400 h-60'
             />
           </div>
         </div>
@@ -60,11 +60,11 @@ export default function TherapistMatchingSteps() {
           </div>
           <div className='w-full md:w-1/2 flex'>
             <Image
-              src='/images/step-2.jpg'
+              src='/images/mhapy-android.png'
               alt='Discover personalized recommendations'
               width={350}
               height={250}
-              className='rounded-lg object-cover bg-gray-400'
+              className='rounded-lg object-contain h-60'
             />
           </div>
         </div>
@@ -88,7 +88,7 @@ export default function TherapistMatchingSteps() {
           </div>
           <div className='w-full md:w-1/2 flex '>
             <Image
-              src='/images/step-3.jpg'
+              src='/images/terapist.jpg'
               alt='Choose your therapist and start your journey'
               width={350}
               height={250}

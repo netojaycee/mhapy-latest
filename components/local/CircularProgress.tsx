@@ -1,11 +1,11 @@
 "use client";
 export default function CircularProgress({ value }: { value: number }) {
-  const radius = 25; // Circle radius
+  const radius = 20; // Circle radius
   const circumference = 2 * Math.PI * radius; // Full circle circumference
   const offset = circumference - (value / 100) * circumference; // Calculate stroke offset
 
   return (
-    <div className='relative w-24 h-24'>
+    <div className='relative w-20 h-20 animate-bounce'>
       <svg className='w-full h-full transform -rotate-90'>
         {/* Background Circle */}
         <circle
@@ -30,7 +30,7 @@ export default function CircularProgress({ value }: { value: number }) {
         />
       </svg>
       {/* Number in the Middle */}
-      <div className='absolute inset-0 flex items-center justify-center text-lg font-bold text-[#441890]'>
+      <div className='absolute inset-0 flex items-center justify-center text-xs font-bold text-[#441890]'>
         {value}%
       </div>
     </div>

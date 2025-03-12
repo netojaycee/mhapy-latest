@@ -98,7 +98,7 @@ export default function Hero() {
         </p>
         <div className='flex items-center gap-5'>
           <Link href='/search-therapists'>
-            <Button className='mt-5' size={"sm"}>
+            <Button className='mt-5'>
               Book a Therapist <ChevronRight className='w-5 h-5' />{" "}
             </Button>
           </Link>

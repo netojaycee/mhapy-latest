@@ -26,15 +26,18 @@ export default function EarnFreeTherapySection({
         </h2>
         <p className='text-gray-600 mb-6'>
           Stay engaged with your mental health journey by checking in daily.
-          Earn points towards free therapy sessions and unlock wellness rewards.
+          Earn points towards free therapy sessions with master&apos;s level licensed
+          professionals only!
         </p>
-        <motion.button
-          onClick={scrollToDownloadSection}
-          className='bg-[#441890] hover:bg-[#37236c] text-white font-medium px-6 py-3 rounded-md shadow-md transition flex items-center gap-2'
-          whileHover={{ scale: 1.05 }}
-        >
-          Download App <Download className='w-5 h-5' />
-        </motion.button>
+        <div className=' w-full flex items-center justify-center lg:justify-start'>
+          <motion.button
+            onClick={scrollToDownloadSection}
+            className='bg-[#441890] hover:bg-[#37236c] text-white font-medium px-6 py-3 rounded-md shadow-md transition flex items-center gap-2'
+            whileHover={{ scale: 1.05 }}
+          >
+            Download App <Download className='w-5 h-5' />
+          </motion.button>
+        </div>
       </motion.div>
 
       {/* Right: Image */}

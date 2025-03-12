@@ -3,16 +3,16 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Search } from "lucide-react";
-import { MobileSidebar } from "./MobileSidebar";
+// import { MobileSidebar } from "./MobileSidebar";
 
 export default function Header() {
-  const nav = [
-    { name: "Home", href: "/" },
-    { name: "Blog", href: "/blog" },
-    { name: "Pricing", href: "/pricing" },
-    { name: "Contact", href: "/contact" },
-    // { name: "Search Therapists", href: "/search-therapists" },
-  ];
+  // const nav = [
+  //   { name: "Home", href: "/" },
+  //   { name: "Blog", href: "/blog" },
+  //   { name: "Pricing", href: "/pricing" },
+  //   { name: "Contact", href: "/contact" },
+  //   // { name: "Search Therapists", href: "/search-therapists" },
+  // ];
   return (
     <header className='sticky top-0 z-50 w-full px-2 md:px-10 shadow-md md:shadow-none bg-white'>
       <div className='flex items-center justify-between py-4'>
@@ -28,7 +28,7 @@ export default function Header() {
         </Link>{" "}
         <nav>
           <ul className='md:space-x-10 space-x-5 items-center flex'>
-            {nav.map((item) => (
+            {/* {nav.map((item) => (
               <li key={item.name} className='hidden md:inline-block'>
                 <Link
                   href={item.href}
@@ -37,7 +37,7 @@ export default function Header() {
                   {item.name}
                 </Link>
               </li>
-            ))}
+            ))} */}
 
             <Link href={"/search-therapists"}>
               <Button className='h-10 md:h-12'>
@@ -45,7 +45,7 @@ export default function Header() {
               </Button>
             </Link>
 
-            <MobileSidebar />
+            {/* <MobileSidebar /> */}
           </ul>
         </nav>
       </div>

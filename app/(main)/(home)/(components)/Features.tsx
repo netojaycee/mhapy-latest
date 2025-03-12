@@ -110,12 +110,11 @@ export default function Features() {
           <span className='bg-[#FFC107]/10 p-3 rounded-[12px] group-hover:bg-[#FFC107] flex items-center justify-center h-[80px] w-[80px]'>
             <Brain className='w-10 h-10 text-[#FFC107] group-hover:text-white' />
           </span>
-          <h1 className='text-left text-xl font-bold font-nunito'>
-            Human Interaction
-          </h1>
+          <h1 className='text-left text-xl font-bold font-nunito'>Values</h1>
           <p className='text-left text-[14px]'>
-            We believe in real, human connections that prioritize understanding,
-            empathy, and emotional support.
+            At Mhapy, we believe in real connections, not just checklists. A
+            space where you can be honest and vulnerable without fear of
+            judgment, where privacy is a promise.
           </p>
         </motion.div>
 
@@ -130,10 +129,10 @@ export default function Features() {
           <span className='bg-[#72EFDD]/10 p-3 rounded-[12px] group-hover:bg-[#72EFDD] flex items-center justify-center h-[80px] w-[80px]'>
             <ArrowUpWideNarrow className='w-10 h-10 text-[#72EFDD] group-hover:text-white' />
           </span>
-          <h1 className='text-left text-xl font-bold font-nunito'>Community</h1>
+          <h1 className='text-left text-xl font-bold font-nunito'>Mision</h1>
           <p className='text-left text-[14px]'>
-            We foster a sense of belonging and provide a platform where users
-            and therapists support each other.
+            To help people feel seen, heard, and supported. Mhapy bridges the
+            gap between what you&apos;re feeling and the care you need.
           </p>
         </motion.div>
 
@@ -148,10 +147,11 @@ export default function Features() {
           <span className='bg-[#4FC3F7]/10 p-3 rounded-[12px] group-hover:bg-[#4FC3F7] flex items-center justify-center h-[80px] w-[80px]'>
             <ShieldCheck className='w-10 h-10 text-[#4FC3F7] group-hover:text-white' />
           </span>
-          <h1 className='text-left text-xl font-bold font-nunito'>Privacy</h1>
+          <h1 className='text-left text-xl font-bold font-nunito'>Vision</h1>
           <p className='text-left text-[14px]'>
-            We respect your privacy and ensure that all your personal
-            information is kept confidential and secure.
+            We imagine a world where no one has to struggle in silence—where
+            understanding your mental health is as natural as checking in with a
+            friend
           </p>
         </motion.div>
       </div>

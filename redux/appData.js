@@ -58,7 +58,26 @@ export const api = createApi({
         }
       },
     }),
+    newsletter: builder.mutation({
+      query: (credentials) => ({
+        url: "/api/newsletter",
+
+        method: "POST",
+
+        body: credentials,
+
+        headers: { "Content-Type": "application/json" },
+      }),
+
+      onQueryStarted: async (arg, { queryFulfilled }) => {
+        try {
+          await queryFulfilled;
+        } catch (err) {
+          console.error("Request failed:", err);
+        }
+      },
+    }),
   }),
 });
 
-export const { useMatchMutation, useBookMutation } = api;
+export const { useMatchMutation, useBookMutation, useNewsletterMutation } = api;

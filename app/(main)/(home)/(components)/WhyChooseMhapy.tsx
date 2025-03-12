@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 
 export default function WhyChooseMhapy() {
   return (
@@ -40,12 +40,12 @@ export default function WhyChooseMhapy() {
                   Our advanced AI analyzes your responses and pairs you with the
                   best therapist for your unique needs.
                 </p>
-                <Button
+                {/* <Button
                   variant='outline'
                   className='mt-4 text-[#5A1DAD] border-[#5A1DAD]'
                 >
                   Learn More
-                </Button>
+                </Button> */}
               </div>
             </CardContent>
           </Card>
@@ -68,12 +68,12 @@ export default function WhyChooseMhapy() {
                   Get access to a wide range of licensed professionals with
                   various specializations.
                 </p>
-                <Button
+                {/* <Button
                   variant='outline'
                   className='mt-4 text-[#5A1DAD] border-[#5A1DAD]'
                 >
                   Meet Experts
-                </Button>
+                </Button> */}
               </div>
             </CardContent>
           </Card>
@@ -96,12 +96,12 @@ export default function WhyChooseMhapy() {
                   Your personal data and therapy sessions are protected with the
                   highest privacy standards.
                 </p>
-                <Button
+                {/* <Button
                   variant='outline'
                   className='mt-4 text-[#5A1DAD] border-[#5A1DAD]'
                 >
                   Learn More
-                </Button>
+                </Button> */}
               </div>
             </CardContent>
           </Card>

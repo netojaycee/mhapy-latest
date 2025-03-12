@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 
 export default function TherapistMatchingSteps() {
   return (
@@ -23,12 +23,12 @@ export default function TherapistMatchingSteps() {
               Answer a few questions about your needs, preferences, and any
               specific requirements you may have.
             </p>
-            <Button
+            {/* <Button
               variant='outline'
               className='mt-4 text-[#5A1DAD] border-[#5A1DAD]'
             >
               Learn More
-            </Button>
+            </Button> */}
           </div>
           <div className='w-full md:w-1/2 flex '>
             <Image
@@ -51,12 +51,12 @@ export default function TherapistMatchingSteps() {
               Our AI algorithm analyzes your information and provides a list of
               therapists who best match your needs.
             </p>
-            <Button
+            {/* <Button
               variant='outline'
               className='mt-4 text-[#5A1DAD] border-[#5A1DAD]'
             >
               Learn More
-            </Button>
+            </Button> */}
           </div>
           <div className='w-full md:w-1/2 flex'>
             <Image
@@ -79,12 +79,12 @@ export default function TherapistMatchingSteps() {
               Review therapist profiles, read user reviews, and select the
               therapist that resonates with confidence.
             </p>
-            <Button
+            {/* <Button
               variant='outline'
               className='mt-4 text-[#5A1DAD] border-[#5A1DAD]'
             >
               Learn More
-            </Button>
+            </Button> */}
           </div>
           <div className='w-full md:w-1/2 flex '>
             <Image

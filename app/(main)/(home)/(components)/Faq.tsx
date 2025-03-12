@@ -10,34 +10,54 @@ import {
 
 const faqData = [
   {
-    question: "Is Mhapy Clinically Validated?",
+    question: "How quickly can I get matched with a therapist?",
     answer:
-      "At this point, the tool is still in development and cannot be validated yet. However, Ruby (mhapy’s chatbot) draws from clinically validated screening tools for anxiety, depression, hallucinations, substance use, and more. These tools have been used for decades by psychiatrists, psychologists, and mental health nurses for assessment.",
+      "Once you complete our simple onboarding process, we can match you with a therapist within 24 to 48 hours. Our system ensures that your match aligns with your needs, preferences, and therapy goals.",
   },
   {
-    question: "Can I find a Therapist on Mhapy?",
+    question: "What is the cost of using Mhapy?",
     answer:
-      "We are working on an update that will allow you to use mhapy to find therapists in your area. We can not wait to share this with you.",
+      "Mhapy offers free features like journaling, peer support, and mental health questionnaires. For therapy sessions, pricing varies based on the therapist’s rates, but we ensure affordability by offering flexible plans.",
   },
   {
-    question: "What is the Privacy Policy?",
+    question: "Are my journals public?",
     answer:
-      "Your discussions with Ruby and with your peers are completely private. We will only view these messages for context whenever a report is made to us for inappropriate comments, hate speech, bullying, or harassment of any kind.",
+      "No! Your journals are 100% private. They are securely stored and accessible only to you. If you choose, you can make them public, but that’s entirely up to you.",
   },
   {
-    question: "What are the rules for what I can share on the platform?",
+    question: "What is Ruby, and how does it help?",
     answer:
-      "Amhapy is committed to being a safe space for you to fully express yourself. Do not hesitate to report any comment you find offensive. We do not tolerate any kind of harassment. No hate speech or bullying. Be kind and courteous and respect everyone’s privacy.",
+      "Ruby is your AI-powered mental health companion that listens, helps track emotions, and turns conversations into actionable insights for you and your therapist. Ruby makes it easier to start therapy without the pressure of knowing what to say.",
   },
   {
-    question: "How many Accountability Partners Do I Need?",
+    question: "How does peer support work?",
     answer:
-      "Quality is better than quantity. We recommend that you start with only 3-5 accountability partners and cultivate meaningful relationships with them. However, we do not put any limits on how many peers you can have as accountability partners.",
+      "Mhapy’s peer support groups connect you with others who share similar experiences. Whether you need encouragement, shared advice, or just someone who understands, our community is here for you.",
   },
   {
-    question: "Is mhapy for me?",
+    question: "How secure is my data?",
     answer:
-      "mhapy is for anyone who wants to improve their mental health. It doesn’t matter what stage of the journey you are at. mhapy is committed to inclusion. We are a no stigma, no judgement digital space to express yourself and connect with peers.",
+      "We take privacy seriously! Mhapy uses end-to-end encryption to protect your conversations, journals, and therapy sessions. Your data is never shared without your consent.",
+  },
+  {
+    question: "Can I try Mhapy for free?",
+    answer:
+      "Yes! You can access journaling, peer support, and mental health questionnaires for free. Therapy sessions and premium features may require a subscription or one-time payment.",
+  },
+  {
+    question: "How long does therapy take to work?",
+    answer:
+      "Therapy is different for everyone. Some people feel better after a few sessions, while others may take longer. The key is consistency, openness, and finding the right therapist for you.",
+  },
+  {
+    question: "What if I need support at night?",
+    answer:
+      "Ruby is available 24/7, so you can process emotions, journal, and track your feelings anytime. For immediate crisis support, we also provide emergency resources.",
+  },
+  {
+    question: "How do I get started?",
+    answer:
+      "It’s simple! Download the App now, take a quick assessment, and start exploring tools that make mental wellness effortless.",
   },
 ];
 

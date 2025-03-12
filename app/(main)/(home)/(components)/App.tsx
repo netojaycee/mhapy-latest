@@ -13,16 +13,16 @@ export default function App({
         ref={downloadSectionRef}
         className=' py-16 max-w-5xl px-3 md:px-0 mx-auto w-full flex items-center md:flex-row flex-col space-y-5 md:space-y-10 lg:space-x-10 lg:space-y-0 mt-10 md:mt-0'
       >
-        <div className='w-full md:w-[50%] flex flex-col  space-y-3 '>
-          <h1 className='text-2xl md:text-3xl lg:text-4xl font-bold font-nunito'>
+        <div className='w-full md:w-[50%] flex flex-col space-y-3 '>
+          <h1 className='text-center md:text-left text-2xl md:text-3xl lg:text-4xl font-bold font-nunito'>
             Download <span className='text-primary'>mhapy app</span> now!
           </h1>
-          <h1 className='text-sm font-bold  w-full'>
-            Let&apos;s get your free copy from Apple and Play store{" "}
+          <h1 className='text-sm font-bold  w-full text-center md:text-left'>
+            Let&apos;s get your free copy from Apple store{" "}
           </h1>
 
-          <div className='flex space-x-5 md:flex-row flex-col items-start justify-start w-full '>
-            <a
+          <div className='flex space-x-5 md:flex-row flex-col  items-center md:justify-start justify-center w-full '>
+            {/* <a
               target='_blank'
               href='https://play.google.com/store/apps/details?id=com.mobile.mhapy&pli=1'
             >
@@ -37,7 +37,7 @@ export default function App({
                 Get it on{" "}
                 <span className='text-[#b629b6] font-bold'>Google Play</span>
               </Button>{" "}
-            </a>
+            </a> */}
             <a
               href='https://apps.apple.com/ca/app/mhapy-ai-therapy-assistant/id6450757194'
               target='_blank'

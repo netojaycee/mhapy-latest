@@ -33,8 +33,38 @@ const matchTherapistsWithAI = async (userResponses: UserResponse): Promise<Match
         const therapists = await fetchTherapists();
 
         if (!therapists.length) throw new Error("No therapists found");
-        console.log(therapists);
+        // console.log(therapists);
         // Prepare OpenAI prompt with user responses and therapist data
+
+
+        //     const prompt = `
+        //   You are an AI assistant that matches users to therapists based on their preferences.
+
+        //   ### **User Preferences**
+        //   ${JSON.stringify(userResponses, null, 2)}
+
+        //   ### **Available Therapists and Their Profiles**
+        //   ${therapists.map((t) => `ID: ${t.id}, Bio: ${t.bio}`).join("\n")}
+
+        //   ### **Task**
+        //   1. **Rank the top 6 most suitable therapists** based on the user's preferences and therapist profiles.
+        //      - Use a **similarity score between 0 and 100** to indicate match strength.
+        //      - The higher the score, the better the match.
+
+        //   2. **Generate relevant tags** that explain why the therapist is a good match.
+        //      - Tags should be a mix of:
+        //        - **Therapist’s specializations** (from their bio)
+        //        - **User's preferences** (from the responses)
+        //        - **Keywords that show strong overlap between both**
+
+        //   ### **Return Format (Strictly JSON Only)**
+        //   Return only JSON **without any additional text**, in this exact format:
+        //   [
+        //     { "id": "therapist_id", "score": similarity_score, "tags": ["OverlappingTag1", "OverlappingTag2"] }
+        //   ]
+        //   Do not include explanations, markdown formatting, or any extra text.
+        // `;
+
         const prompt = `
       You are an AI assistant that matches users to therapists based on their preferences.
 
@@ -55,13 +85,21 @@ const matchTherapistsWithAI = async (userResponses: UserResponse): Promise<Match
            - **User's preferences** (from the responses)
            - **Keywords that show strong overlap between both**
 
+      3. **Provide a short 2 line summary of each therapist’s bio** to give the user a quick overview of their expertise and approach.
+
       ### **Return Format (Strictly JSON Only)**
       Return only JSON **without any additional text**, in this exact format:
       [
-        { "id": "therapist_id", "score": similarity_score, "tags": ["OverlappingTag1", "OverlappingTag2"] }
+        { 
+          "id": "therapist_id", 
+          "score": similarity_score, 
+          "tags": ["OverlappingTag1", "OverlappingTag2"], 
+          "mini_bio": "A concise 2 sentence summary of the therapist’s bio." 
+        }
       ]
       Do not include explanations, markdown formatting, or any extra text.
     `;
+
 
         const completion = await openai.chat.completions.create({
             model: "gpt-4-turbo",

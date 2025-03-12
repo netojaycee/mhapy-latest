@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { Separator } from "@/components/ui/separator";
 import Features from "./(components)/Features";
 import Hero from "./(components)/Hero";
@@ -8,22 +8,24 @@ import Hero from "./(components)/Hero";
 import Faq from "./(components)/Faq";
 import App from "./(components)/App";
 // import { Button } from "@/components/ui/button";
-import TherapyRecommendations from "./(components)/TherapyRecommendation";
+// import TherapyRecommendations from "./(components)/TherapyRecommendation";
 import WhyChooseMhapy from "./(components)/WhyChooseMhapy";
 import TherapistsMatchingSteps from "./(components)/TherapistsMatchingSteps";
 import TestimonialSlider from "./(components)/TestimonialSlider";
 import { useRef } from "react";
 import EarnFreeTherapySection from "./(components)/EarnFreeTherapySection";
+import MeetRuby from "./(components)/Meetruby";
 
 export default function Home() {
-     const downloadSectionRef = useRef<HTMLDivElement | null>(null);
+  const downloadSectionRef = useRef<HTMLDivElement | null>(null);
 
   return (
     <div className='flex flex-col '>
       <Hero />
       <EarnFreeTherapySection downloadSectionRef={downloadSectionRef} />
       <Features />
-      <TherapyRecommendations />
+      {/* <TherapyRecommendations /> */}
+      <MeetRuby downloadSectionRef={downloadSectionRef} />
       <WhyChooseMhapy />
       <TherapistsMatchingSteps />
       {/* <Goal />

@@ -1,28 +1,170 @@
+"use client";
 import React from "react";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
-import { FacebookIcon, Instagram } from "lucide-react";
+import { FacebookIcon, Instagram, Loader2 } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { toast } from "sonner";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { useNewsletterMutation } from "@/redux/appData";
+
+const newsletterSchema = z.object({
+  email: z
+    .string({ required_error: "Email is required" })
+    .email("Invalid email address"),
+});
 
 export default function Footer() {
+  const [newsletter, { isLoading, isSuccess, isError, error }] =
+    useNewsletterMutation();
+
+  const form = useForm<z.infer<typeof newsletterSchema>>({
+    resolver: zodResolver(newsletterSchema),
+    defaultValues: {
+      email: "",
+    },
+  });
+
+  const onSubmit = async (values: z.infer<typeof newsletterSchema>) => {
+    // setGlobalError("");
+    try {
+      console.log(values);
+
+      await newsletter(values);
+    } catch (error) {
+      const message =
+        (error as { data?: { message?: string } })?.data?.message ||
+        "An unexpected error occurred.";
+      toast.error(message);
+      // setGlobalError(message);
+      console.error("An error occurred:", error);
+    }
+  };
+
+  React.useEffect(() => {
+    if (isSuccess) {
+      toast.success(`Subscribed Successfully`);
+      form.reset();
+    } else if (isError) {
+      if ("data" in error && typeof error.data === "object") {
+        const errorMessage = (error.data as { message?: string })?.message;
+        //  setGlobalError(errorMessage || "Login failed.");
+        toast.error(errorMessage || "Request failed.");
+      } else {
+        //  setGlobalError("An unexpected error occurred.");
+        toast.error("An unexpected error occurred.");
+      }
+    }
+  }, [isSuccess, isError, error, form]);
   return (
     <footer className='bg-primary text-white'>
       {/* Top Section */}
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-8 px-5 md:px-20 py-10'>
+      <div className='grid grid-cols-1 md:grid-cols-3 gap-8 px-5 md:px-20 py-10 '>
         {/* About Section */}
-        <div className='space-y-5'>
+        {/* <div className='space-y-5'>
           <h1 className='text-3xl font-bold'>mhapy</h1>
           <p className=' leading-relaxed'>
             mhapy is a mental health accountability platform that helps you
             track your mental health progress and connect with mental health
             professionals.
           </p>
-        </div>
+        </div> */}
+        <AnimatePresence>
+          <motion.div
+            key='newsletter' // Make sure key is constant for this component to animate once
+            initial={{ opacity: 0, y: 20 }} // Starting animation state
+            animate={{ opacity: 1, y: 0 }} // Ending animation state
+            transition={{ duration: 1 }} // Transition duration
+          >
+            <div className='max-w-md'>
+              <h2 className='text-3xl font-bold'>mhapy</h2>
+              {/* <p className='mt-4 text-lg text-[#C5B7DD]'></p> */}
+
+              <Form {...form}>
+                <form
+                  onSubmit={form.handleSubmit(onSubmit)}
+                  className='space-y-4'
+                >
+                  <FormField
+                    control={form.control}
+                    name='email'
+                    render={({ field }) => (
+                      <FormItem className='w-full mt-4'>
+                        <FormLabel className='font-semibold text-base text-[#C5B7DD]'>
+                          Subscribe to our newsletter
+                        </FormLabel>
+                        <FormControl>
+                          <div className='mt-2 relative'>
+                            <Input
+                              className='w-full px-2 py-2 h-10 pr-20 rounded-md border-none outline-none bg-white text-black'
+                              type='email'
+                              placeholder='Enter your email address'
+                              autoComplete='off'
+                              {...field}
+                            />
+
+                            <div className='absolute right-1 top-1/2 transform -translate-y-1/2 '>
+                              {isLoading ? (
+                                <button
+                                  disabled
+                                  className='flex items-center justify-center gap-1 w-full bg-primary text-white hover:bg-primary/80 px-4 py-1.5 rounded-md font-semibold'
+                                  type='submit'
+                                >
+                                  {" "}
+                                  <span>Please wait</span>
+                                  <Loader2 className='animate-spin' />
+                                </button>
+                              ) : (
+                                <button
+                                  onClick={form.handleSubmit(onSubmit)}
+                                  className='w-full bg-primary text-white hover:bg-primary/80 px-4 py-1.5 rounded-md font-semibold'
+                                  type='submit'
+                                >
+                                  Subscribe{" "}
+                                </button>
+                              )}
+                            </div>
+                          </div>
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </form>
+              </Form>
+            </div>
+          </motion.div>
+        </AnimatePresence>
 
         {/* Quick Links */}
         <div className='space-y-5'>
           <h1 className='text-xl font-semibold'>Quick Links</h1>
-          <ul className='space-y-2'>
+          {/* <ul className='space-y-2'>
             {["Home", "Blog", "Pricing", "Contact"].map((link, idx) => (
+              <li key={idx}>
+                <a
+                  href={`/${link === "Home" ? "" : link.toLowerCase()}`}
+                  className=' hover:text-[#b282f4] transition duration-300'
+                >
+                  {link}
+                </a>
+              </li>
+            ))}
+          </ul> */}
+
+          <ul className='space-y-2'>
+            {["Home", "Search Therapists"].map((link, idx) => (
               <li key={idx}>
                 <a
                   href={`/${link === "Home" ? "" : link.toLowerCase()}`}
@@ -51,9 +193,7 @@ export default function Footer() {
       {/* Bottom Section */}
       <div className='flex flex-col md:flex-row items-center justify-between px-5 md:px-20 py-5'>
         {/* Footer Branding */}
-        <p className='text-sm '>
-          &copy; 2025 mhapy. All Rights Reserved.
-        </p>
+        <p className='text-sm '>&copy; 2025 mhapy. All Rights Reserved.</p>
         <Image
           src='/images/logo.png'
           alt='mhapy logo'

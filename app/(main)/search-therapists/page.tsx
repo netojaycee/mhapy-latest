@@ -17,7 +17,6 @@ import LoadingModal from "@/components/local/LoadingModal";
 import { useMatchMutation } from "@/redux/appData";
 import Image from "next/image";
 
-
 export default function TherapistMatchingForm() {
   const [step, setStep] = useState(0);
   // const [setGlobalError] = useState<string>("");
@@ -154,7 +153,7 @@ export default function TherapistMatchingForm() {
 
   React.useEffect(() => {
     if (isSuccess) {
-      console.log(data);
+      // console.log(data);
       localStorage.setItem("matchedTherapists", JSON.stringify(data));
 
       localStorage.removeItem("therapistFormData");
@@ -212,9 +211,6 @@ export default function TherapistMatchingForm() {
               {isLoading ? (
                 <>
                   <LoadingModal isLoading={isLoading} />
-                  <p className='text-sm text-gray-500'>
-                    Analyzing your preferences...
-                  </p>
                 </>
               ) : (
                 <Button
@@ -272,7 +268,7 @@ export default function TherapistMatchingForm() {
         </div>
 
         {/* Previous & Next Buttons */}
-        <div className='flex w-full gap-10 mt-10'>
+        <div className='flex w-full gap-10 mt-20'>
           {step > 0 && step < 8 ? (
             <Button
               variant='secondary'
@@ -326,7 +322,7 @@ export default function TherapistMatchingForm() {
                 </button>
               </div>
               <div className='mt-3 flex space-x-2'>
-                <a
+                {/* <a
                   target='_blank'
                   href='https://play.google.com/store/apps/details?id=com.mobile.mhapy&pli=1'
                 >
@@ -338,12 +334,11 @@ export default function TherapistMatchingForm() {
                       src={"/images/google.png"}
                       alt='google'
                     />{" "}
-                    {/* Get it on{" "} */}
                     <span className='text-[#b629b6] font-bold'>
                       Google Play
                     </span>
                   </Button>{" "}
-                </a>
+                </a> */}
                 <a
                   href='https://apps.apple.com/ca/app/mhapy-ai-therapy-assistant/id6450757194'
                   target='_blank'
@@ -355,7 +350,7 @@ export default function TherapistMatchingForm() {
                       src={"/images/app.png"}
                       alt='google'
                     />{" "}
-                    {/* Download on{" "} */}
+                    Download on{" "}
                     <span className='text-[#b629b6] font-bold'>App Store</span>
                   </Button>
                 </a>
